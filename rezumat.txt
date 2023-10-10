@@ -1,0 +1,19 @@
+La momentul actual, internetul și tehnologia este într-o continuă dezvolare, iar aplicațiile
+web sunt utilizate într-o varietate de domenii și industrii datorită capacității lor de a oferi o
+experiență interactivă și accesibilitate prin intermediul browserului web.
+Scopul principal a fost de a crea un sistem de monitorizare a angajaților prin utilizarea
+unei aplicații web. Aceasta fiind ușor de accesat și cel mai important să poată monitoriza
+acțiunile angajaților din timpul muncii, fără ca aceștia să depună prea mult efort.
+Aplicația dată ar scuti multe companii de problema înregistrărilor din timpul muncii,
+făcute prin metode precum utilizarea unui cod special sau confirmarea prezenței prin utilizarea
+unui login și parolă, adesea uitate de către angajați.
+În acest scop s-au ales mediile de dezvoltare potrivite pentru a realiza partea de
+frontend și backend. Sau făcut conexiunile dintre acestea și apoi s-a implementat
+recunoașterea facială, datorită căreia sistemul de logare și înregistrare a anjaților este mult mai
+eficient și precis.
+S-a separat accesibiliatatea prin utilizarea rolurilor, unul cu acces limitat de simplu
+utilizator și altul de administrator.Și tot în scop de securitate s-a implementat un sistem de
+autentificare prin utilizarea unui token.
+Prin urmare scopul principal a fost îndeplinit, dar totodată pot fi aduse și o serie de
+îmbunătățiri, cum ar fi generarea automată a rapoartelor de prezență sau distribuirea sarcinii pe
+mai multe servere.
