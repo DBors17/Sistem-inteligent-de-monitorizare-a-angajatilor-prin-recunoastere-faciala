@@ -1,0 +1,117 @@
+<div class="container-sm">
+  <div class="row pt-5 pb-5 d-flex justify-content-center" *ngIf="programs.length < 5">
+    <div class="col-sm-6">
+    <div class=" login-box add">
+        <h2>Program Nou</h2>
+        <form>
+          <div class="user-box">
+            <input type="time" min="00:00" max="23:59" step="900" name="intrare" [(ngModel)] = "intrare">
+            <label>Intrare</label>
+          </div>
+          <div class="user-box">
+            <input type="time" min="00:00" max="23:59" step="900" name="intrareMasa" [(ngModel)] = "intrareMasa">
+            <label>Intrare Masa</label>
+          </div>
+          <div class="user-box">
+            <input type="time" min="00:00" max="23:59" step="900" name="iesireMasa" [(ngModel)] = "iesireMasa">
+            <label>Iesire Masa</label>
+          </div>
+          <div class="user-box">
+            <input type="time" min="00:00" max="23:59" step="900" name="iesire" [(ngModel)] = "iesire">
+            <label>Iesire</label>
+          </div>
+          <div class="role">
+            <label class="user_role">Ziua</label>
+            <select type="text" name="zi" [(ngModel)] = "zi">
+                <option selected>luni</option>
+                <option>marti</option>
+                <option>miercuri</option>
+                <option>joi</option>
+                <option>vineri</option>
+              </select>
+           </div>
+           <div class="button_div">
+          <button (click)="addProgram(program)">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Adauga
+        </button>
+    </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="d-flex justify-content-center">
+      <table class="styled-table">
+        <thead>
+        <tr>
+          <th colspan="5">Program</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+            <th rowspan="2">Ziua</th>
+            <th colspan="4">Ora</th>
+        </tr>
+        <tr>
+          <th >Intrare</th>
+          <th>Intrare Masa</th>
+          <th>Iesire Masa</th>
+          <th>Iesire</th>
+        </tr>
+        <tr *ngFor="let element of programs">
+          <td class="p-3">{{element.zi}}</td>
+          <td class="p-3">{{element.intrare | slice:0:5}}</td>
+          <td class="p-3">{{element.intrareMasa | slice:0:5}}</td>
+          <td class="p-3">{{element.iesireMasa | slice:0:5}}</td>
+          <td class="p-3">{{element.iesire | slice:0:5}}</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <div class="row pt-5 pb-5 d-flex justify-content-center">
+    <div class="col-sm-8 d-flex justify-content-center" *ngIf="programs.length == 5">
+      <div class=" login-box">
+          <h2>Editare Program</h2>
+          <table>
+            <tr>
+              <th class="p-3">Ziua</th>
+              <th class="p-3">Intrare</th>
+              <th class="p-3">Intrare Masa</th>
+              <th class="p-3">Iesire Masa</th>
+              <th class="p-3">Iesire</th>
+              <th class="p-3">Editare</th>
+            </tr>
+            <tr *ngFor="let element of programs; let i = index">
+              <td class="user-box p-3">
+                <input type="text" [value]="programs[i].zi" [(ngModel)] = "programs[i].zi"  readonly>
+              </td>
+              <td class="user-box p-3">
+                <input type="time" min="00:00" max="23:59" step="900" name="intrare{{i}}" [(ngModel)] = "programs[i].intrare">
+              </td>
+              <td class="user-box p-3">
+                <input type="time" min="00:00" max="23:59" step="900" name="intrareMasa{{i}}" [(ngModel)] = "programs[i].intrareMasa">
+              </td>
+              <td class="user-box p-3">
+                <input type="time" min="00:00" max="23:59" step="900" name="iesireMasa{{i}}" [(ngModel)] = "programs[i].iesireMasa">
+              </td>
+              <td class="user-box p-3">
+                <input type="time" min="00:00" max="23:59" step="900" name="iesire{{i}}" [(ngModel)] = "programs[i].iesire">
+              </td>
+              <td>
+                <div class="button_div">
+                    <button (click)="editProgram(programs[i])">
+                    Editare
+                  </button>
+              </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

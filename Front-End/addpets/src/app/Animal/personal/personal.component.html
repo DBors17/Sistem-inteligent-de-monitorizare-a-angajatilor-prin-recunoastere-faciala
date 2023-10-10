@@ -1,0 +1,122 @@
+<div class="container-sm pb-5">
+<div class="row d-flex justify-content-center">
+  <div class="pt-5 color_gri">
+    <div class="col-sm-12" *ngIf = "(this.selectedPersoana && selectedPersoana.image)">
+    <div class="img_container">
+      <img [src]="selectedPersoana.image" class="img_fluid">
+    </div>
+    </div>
+  </div>
+  </div>
+    <div class="row pt-5">
+       <div class="col-sm-4" *ngIf = "(this.selectedPersoana && selectedPersoana.name && selectedPersoana.userLastname)">
+      <h3 class="card_title user">{{selectedPersoana.name}} {{selectedPersoana.userLastname}}</h3>
+      <div class="card_text_user">
+        <div class="text_padding user">Functia: {{selectedPersoana.userPosition}}</div>
+        <div class="text_padding user">Email: {{selectedPersoana.email}}</div>
+          <div class="text_padding user">Telefon: {{selectedPersoana.userPhone}}</div>
+          </div>
+          <div class="button_pos">
+      <button *ngIf = "isUserAuthenticated && selectedPersoana.id == myId" (click) = "Editare(selectedPersoana)" class="button editare">Editare</button>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="login-box">
+        <h3 class="card_title user">Inregistrari</h3>
+      <form>
+        <div class="user-box d-flex justify-content-center">
+          <input type="date" name="data" [value]="selectedDate" [(ngModel)] = "selectedDate">
+        </div>
+        <div class="button_pos">
+          <button  class="button obtine" (click)="Afisare()">Obtine</button>
+      </div>
+      </form>
+      </div>
+</div>
+</div>
+<div class="row pt-3">
+    <div class="col-sm-6 d-flex justify-content-center">
+      <table class="styled-table">
+        <thead>
+        <tr>
+          <th colspan="5">Program</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+          <th rowspan="2">Ziua</th>
+          <th colspan="4">Ora</th>
+        </tr>
+        <tr>
+          <th >Intrare tura</th>
+          <th>Intrare pauza</th>
+          <th>Iesire pauza</th>
+          <th>Iesire tura</th>
+        </tr>
+        <tr *ngFor="let element of program" [ngClass]="{'active-row': isTodayProgram(element.zi)}">
+          <td class="p-3">{{element.zi}}</td>
+          <td class="p-3">{{element.intrare | slice:0:5}}</td>
+          <td class="p-3">{{element.intrareMasa | slice:0:5}}</td>
+          <td class="p-3">{{element.iesireMasa | slice:0:5}}</td>
+          <td class="p-3">{{element.iesire | slice:0:5}}</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <div class="d-flex justify-content-center">
+      <div *ngIf ="statisticTable.length > 0">
+      <table  class="styled-table">
+        <thead>
+        <tr>
+          <th colspan="3">Inregistrari</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Motivul</th>
+          <th>Data</th>
+          <th>Ora</th>
+        </tr>
+        <tr  *ngFor="let element of statisticTable" [ngClass]="{'active-row': isToday(element)}">
+          <td class="p-3">{{element.reason}}</td>
+          <td class="p-3">{{element.time | date:'dd/MM/yyyy'}}</td>
+          <td class="p-3">{{element.time | date:'HH:mm'}}</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <div *ngIf ="statisticTable.length == 0 && today.length > 0">
+      <table  class="styled-table">
+        <thead>
+        <tr>
+          <th colspan="3" class="align_ora prog_table p-3">Inregistrari</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th class="prog_table p-3">Motivul</th>
+          <th class="prog_table p-3">Data</th>
+          <th class="prog_table p-3">Ora</th>
+        </tr>
+        <tr *ngFor="let element of today"  [ngClass]="{'active-row': isToday(element)}">
+          <td class="p-3">{{element.reason}}</td>
+          <td class="p-3">{{element.time | date:'dd/MM/yyyy'}}</td>
+          <td class="p-3">{{element.time | date:'HH:mm'}}</td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+  <div *ngIf ="statisticTable.length == 0 && today.length == 0">
+    <h2 class="mesaj pt-3">{{mesaj}}</h2>
+  </div>
+    </div>
+    </div>
+</div>
+<div class="row pt-3">
+  <div class="col-sm-12">
+  <app-chart></app-chart>
+</div>
+</div>
+</div>

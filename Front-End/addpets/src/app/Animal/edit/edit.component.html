@@ -1,0 +1,104 @@
+<div class="container-md">
+  <div class="row pt-5 pb-5 d-flex justify-content-center">
+    <div class="col-sm-8">
+        <div class="login-box" *ngIf= "isUserAdmin">
+            <h2>Editare</h2>
+            <form>
+              <div class="user-box">
+                <input type="text" name="name" [(ngModel)] = "persoana.name">
+                <label>Nume</label>
+              </div>
+              <div class="user-box">
+                <input type="text" name="userLastname" [(ngModel)] = "persoana.userLastname">
+                <label>Prenume</label>
+              </div>
+              <div class="user-box" *ngIf= "isYourProfile">
+                <input type="text" name="username" [(ngModel)] = "persoana.userName">
+                <label>Username</label>
+              </div>
+              <div class="user-box" *ngIf= "isYourProfile">
+                <input type="password" name="password" [(ngModel)] = "persoana.password">
+                <label>Parola</label>
+              </div>
+              <div class="user-box">
+                <input type="text" name="userPosition" [(ngModel)] = "persoana.userPosition">
+                <label>Functie</label>
+              </div>
+              <div class="user-box">
+                <input type="text" name="email" [(ngModel)] = "persoana.email">
+                <label>Email</label>
+              </div>
+              <div class="user-box">
+                <input type="text" name="userPhone" [(ngModel)] = "persoana.userPhone">
+                <label>Telefon</label>
+              </div>
+              <div class="role" *ngIf= "!isYourProfile">
+                <label class="user_role">Role</label>
+                <select type="text" name="role" [(ngModel)] = "persoana.role">
+                    <option selected>user</option>
+                    <option>admin</option>
+                  </select>
+               </div>
+
+               <div class="image_div">
+                <label class="user_image">Imagine</label>
+                    <img [src]="retrievedImage" class="img-thumbnail"
+                    style="margin: auto; display: block; border: 50%; width: 256px; max-width: 100%; height: auto;">
+                    <div class="row ml-1">
+                        <input type="file" accept="image/x-png,image/gif,image/jpeg" (change)="onFileChanged($event)">
+                    </div>
+                    <div class="row mt-2 ml-1">
+                        <input class="img_btn" type="button" (click)="onUpload()" value="Încarcă">
+                    </div>
+               </div>
+
+               <div class="button_div">
+                <button (click)="Actualizare(persoana)">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Salvare
+            </button>&nbsp;&nbsp;
+            <button (click)="Personal()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Anulare
+            </button>
+        </div>
+            </form>
+          </div>
+    </div>
+  </div>
+  <div class="row pt-5 pb-5 d-flex justify-content-center">
+    <div class="col-sm-8 d-flex justify-content-center">
+    <div class="login-box user" *ngIf= "!isUserAdmin">
+        <h2>Editare Parola</h2>
+        <form>
+          <div class="user-box" >
+            <input type="password" name="password" [(ngModel)] = "persoana.password">
+            <label>Parola</label>
+          </div>
+           <div class="button_div">
+            <button (click)="Actualizare(persoana)">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Salvare
+        </button>&nbsp;&nbsp;
+        <button (click)="Personal()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Anulare
+        </button>
+    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

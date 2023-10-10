@@ -1,0 +1,14 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: rgba(38,148,130,1);
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, rgb(147, 81, 209), rgba(37, 117, 252, 1)); */
+    background: -webkit-linear-gradient(to right,rgba(38,148,130,1), rgba(147, 224, 211,1), 1);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(38,148,130), rgb(147, 224, 211))
+    }
+
+.btn-logare{
+ margin-right: 20px;
+}

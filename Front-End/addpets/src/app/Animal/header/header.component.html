@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid ml-3 justify-content-center">
+      <img class="logo" src="assets/Logo.png" alt="Logo"><div class="logo_text">FaceGuard</div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <button *ngIf = "isUserAuthenticated" (click)="Personal()" class="button first">Home</button>
+        <button *ngIf = "isUserAdmin && isUserAuthenticated" (click)="Liste()" class="button">Angajati</button>
+        <button *ngIf = "isUserAdmin && isUserAuthenticated" (click)="Nou()" class="button">Adauga</button>
+      </div>
+    </div>
+    <div class="nume">{{nume}} {{prenume}}</div>
+    <button *ngIf = "!isUserAuthenticated" (click)="Login()" class="button logout">Login</button>
+    <button *ngIf = "isUserAuthenticated" (click)="Logout()" class="button logout">Logout</button>
+    </div>
+  </nav>

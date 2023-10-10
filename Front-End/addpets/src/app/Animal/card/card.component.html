@@ -1,0 +1,31 @@
+<div class="container-sm mb-5 pb-5">
+    <div class="row pb-3" *ngIf= "isUserAdmin">
+        <div class="col-sm-4 pt-3"  *ngFor="let persoana of mappedArrayPersoana">
+              <div class="card" (click) = 'Inregistrari(persoana)'>
+                <div class="card_img">
+                <img [src]="persoana.image" class="img">
+              </div>
+                <div class="card-body">
+                  <h5 class="card_title">{{persoana.name}} {{persoana.userLastname}}</h5>
+                  <div class="card_text">
+                    <div class="text_padding">{{persoana.userPosition}}</div>
+                    <div class="text_padding">{{persoana.email}}</div>
+                      <div class="text_padding">{{persoana.userPhone}}</div>
+                      </div>
+                <div class="pb-3 d-flex justify-content-center">
+                  <div class="">
+                  <button *ngIf = "isUserAdmin && isUserAuthenticated" (click) = "Editare(persoana)" class="button editare">Editare</button>
+                  </div>
+                  <div class="">
+                  <button *ngIf = "isUserAdmin && isUserAuthenticated && persoana.id !== myId" (click) = 'deleteUser(persoana.id)' class="button sterge">Sterge</button>
+                  </div>
+                  <div class="">
+                    <button *ngIf = "isUserAdmin && isUserAuthenticated" (click) = 'Program(persoana)' class="button program">Program</button>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+  

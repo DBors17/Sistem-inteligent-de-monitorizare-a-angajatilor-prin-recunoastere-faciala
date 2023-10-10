@@ -1,0 +1,53 @@
+nav{
+    background-color:  rgb(183, 220, 214);
+}
+
+.logo{
+    margin-left: 70px;
+    height: 50px;
+    width: auto;
+}
+
+.logo_text{
+   color: rgb(13, 62, 53); 
+   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 27px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700; 
+   line-height: 26.4px; 
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color:  rgb(18, 69, 60);
+    font-family:"Copperplate","Courier New", monospace;
+}
+
+.button:hover{
+    color:  rgb(255, 255, 255);
+}
+
+.button:focus {
+    border: none;
+}
+
+.button.first{
+    padding-left: 70px;
+}
+
+.button.logout{
+    padding-right: 70px;
+}
+
+.nume{
+    padding-right: 10px;
+    font-size: 18px;
+    font-family:"Copperplate","Courier New", monospace;
+    color: rgb(18, 60, 60);
+}

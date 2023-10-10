@@ -1,0 +1,54 @@
+<div class="back_color">
+  <div class="container-sm">
+    <div class="row">
+      
+      <div class="col-sm-8 pad_row">
+         <div class="d-flex justify-content-center">
+            <div class="gif" *ngIf="reason == ''">
+            <div class="spatiu_gol"></div>
+         </div>
+
+             <div class="video_pos" *ngIf="reason !== ''">
+              <video class="video" #video autoplay></video>
+              <canvas class="canva" #canvas></canvas>
+            </div> 
+          </div>    
+
+            <div class="btn_pos" *ngIf="reason !== ''">
+              <button class="button m-3" *ngIf="!cameraStarted" (click)="startCamera()">Start Camera</button>
+              <button class="button m-3" *ngIf="cameraStarted" (click)="stopCamera()">Stop Camera</button>
+              <button class="button m-3" (click)="capture()">Pozeaza</button>
+              <button class="button m-3" (click)="runPython()">Inregistrare</button>
+            </div>
+    
+          <div class="btn_pos" *ngIf="reason == '' && progres == true && service.id == 0">
+            <div class="progress-element progress-element--html">
+              <p class="progress-label">LOGARE</p>
+              <div class="progress-container">
+                <progress max="100" value="99">99%</progress>
+              </div>
+            </div>
+          </div>
+          <div class="btn_pos" *ngIf="service.id !== 0 && service.id !== -1">
+          <button *ngIf = "!isUserAuthenticated" class="button m-3" (click)="getRecognizedId()">Login</button>
+          </div>
+
+          <div class="btn_pos" *ngIf="service.id == -1">
+            <h1>Mai incearca sa faci o poza! Fata ta nu a fost recunoscuta!</h1>
+            </div>
+        </div>
+
+            <div class="col-sm-4 padding_button">
+              <div class="d-flex flex-column bd-highlight">
+                     <div class="text_obt">
+                          <h2>Alege o obtiune:</h2>
+                    </div>
+                    <button class="button m-3" (click)="handleButtonClick('Intrare tura')">Intrare tura</button>
+                    <button class="button m-3" (click)="handleButtonClick('Iesire tura')">Iesire tura</button>
+                    <button class="button m-3" (click)="handleButtonClick('Intrare pauza')">Intrare pauza</button>
+                    <button class="button m-3" (click)="handleButtonClick('Iesire pauza')">Iesire pauza</button> 
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

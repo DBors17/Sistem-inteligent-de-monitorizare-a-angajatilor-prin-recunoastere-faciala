@@ -1,0 +1,61 @@
+<div class="container-sm">
+  <div class="row pt-5 pb-4 d-flex justify-content-center">
+    <div class="col-md-6 d-flex justify-content-center">
+            <div class="login-box">
+                <h2>Personal Nou</h2>
+                <form>
+                  <div class="user-box">
+                    <input type="text" name="name" [(ngModel)] = "persoana.name">
+                    <label>Nume</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="userLastname" [(ngModel)] = "persoana.userLastname">
+                    <label>Prenume</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="userName" [(ngModel)] = "persoana.userName">
+                    <label>Username</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="password" name="password" [(ngModel)] = "persoana.password">
+                    <label>Parola</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="userPosition" [(ngModel)] = "persoana.userPosition">
+                    <label>Functie</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="email" [(ngModel)] = "persoana.email">
+                    <label>Email</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="userPhone" [(ngModel)] = "persoana.userPhone">
+                    <label>Telefon</label>
+                  </div>
+                  <div class="role">
+                    <label class="user_role">Role</label>
+                    <select type="text" name="role" [(ngModel)] = "persoana.role">
+                        <option selected>user</option>
+                        <option>admin</option>
+                      </select>
+                   </div>
+                  <div class="image_div">
+                    <label class="user_image">Imagine</label>
+                            <input type="file" accept="image/x-png,image/gif,image/jpeg" (change)="onFileChanged($event)">
+                        <div class="row mt-1 ml-1">
+                        </div>
+                   </div>
+                   <div class="button_div">
+                  <button (click)="addPersoana(persoana)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Adauga
+                </button>
+            </div>
+                </form>
+              </div>
+    </div>
+  </div>
+</div>

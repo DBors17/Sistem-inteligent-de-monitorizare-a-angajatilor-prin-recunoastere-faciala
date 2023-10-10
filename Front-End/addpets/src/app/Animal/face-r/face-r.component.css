@@ -1,0 +1,185 @@
+.back_color{
+  background-color: rgb(2, 11, 48); 
+   height: 100%;
+   margin: 0px;
+}
+
+.pad_row{
+  margin-top: 200px;
+}
+
+.text_obt{
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+video {
+    transform: scaleX(-1);
+  }
+
+canvas{
+  transform: scaleX(-1);
+}
+
+.video_pos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+}
+
+.video{
+  margin-top: 30px;
+  height: 480px;
+  width: 640px;
+}
+
+.canva{
+  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.btn_pos{
+padding-top: 30px;
+display: flex;
+justify-content: center;
+  align-items: center;
+}
+
+.canvas_pos{
+  padding-top: 30px;
+display: flex;
+justify-content: center;
+  align-items: center;
+}
+
+.text_h1{
+  padding-top: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.button {
+background-color: #22686c;
+border-radius: 100px;
+box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+color: white;
+cursor: pointer;
+display: inline-block;
+font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+padding: 7px 20px;
+text-align: center;
+text-decoration: none;
+transition: all 250ms;
+border: 0;
+font-size: 16px;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.button:hover {
+box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+transform: scale(1.05) rotate(-1deg);
+}
+
+
+progress {
+  opacity: 0;
+  color: #fff;
+}
+
+.progress-element {
+  width: 200px;
+  margin: 0 0 10px;
+}
+
+.progress-container {
+  position: relative;
+  background: #eee;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: turquoise;
+}
+
+.progress-element--html .progress-container::before {
+  animation: progress-html 5s ease-in forwards;
+}
+
+.progress-label {
+  position: relative;
+  color: #fff;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.progress-label::after {
+  counter-reset: num var(--num);
+  content: counter(num) "%";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.progress-element--html .progress-label::after {
+  animation: progress-text-html 5s ease-in forwards;
+}
+
+
+@keyframes progress-html {
+  to {
+    width: 99%;
+  }
+}
+
+@keyframes progress-text-html {
+  to {
+    --num: 99;
+  }
+}
+
+.padding_button{
+  margin-top: 270px;
+}
+
+.gif{
+  animation: slide-in 1s ease-in-out;
+  background-image: url("src/assets/gif.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.spatiu_gol{
+  height: 480px;
+  width: 640px;
+}
